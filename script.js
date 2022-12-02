@@ -37,7 +37,7 @@ function clickHandler() {
   if (isNaN(initialPrice) || isNaN(qtyOfStock) || isNaN(currPrice)) {
     output.style.color = "white";
     body.style.backgroundColor = "hsla(12, 6%, 15%, 0.758)";
-    output.innerText = `*Please enter proper numbers!!`;
+    output.innerText = `*Please enter proper numbers!`;
   } else {
     if (initialPrice > 0 && qtyOfStock > 0 && currPrice > 0) {
       const result = calcProfitAndLoss(initialPrice, qtyOfStock, currPrice);
