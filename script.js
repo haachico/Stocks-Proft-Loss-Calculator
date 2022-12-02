@@ -29,19 +29,47 @@ function calcProfitAndLoss(initialPrice, qtyOfStock, currPrice) {
   }
 }
 
+// function clickHandler() {
+//   const initialPrice = Number(initialInput.value);
+//   const qtyOfStock = Number(qtyInput.value);
+//   const currPrice = Number(currInput.value);
+
+//   if (isNaN(initialPrice) || isNaN(qtyOfStock) || isNaN(currPrice)) {
+//     output.style.color = "white";
+//     body.style.backgroundColor = "hsla(12, 6%, 15%, 0.758)";
+//     output.innerText = `*Please enter proper numbers!!`;
+//   } else {
+//     if (initialPrice > 0 && qtyOfStock > 0 && currPrice > 0) {
+//       const result = calcProfitAndLoss(initialPrice, qtyOfStock, currPrice);
+
+//       output.innerText = result;
+//     } else {
+//       output.style.color = "white";
+//       body.style.backgroundColor = "hsla(12, 6%, 15%, 0.758)";
+//       output.innerText = `*Please enter all fields!`;
+//     }
+//   }
+// }
+
 function clickHandler() {
   const initialPrice = Number(initialInput.value);
   const qtyOfStock = Number(qtyInput.value);
   const currPrice = Number(currInput.value);
 
-  if (initialPrice > 0 && qtyOfStock > 0 && currPrice > 0) {
-    const result = calcProfitAndLoss(initialPrice, qtyOfStock, currPrice);
+  if (isNaN(initialPrice) && isNaN(qtyOfStock) && isNaN(currPrice)) {
+    if (initialPrice > 0 && qtyOfStock > 0 && currPrice > 0) {
+      const result = calcProfitAndLoss(initialPrice, qtyOfStock, currPrice);
 
-    output.innerText = result;
+      output.innerText = result;
+    } else {
+      output.style.color = "white";
+      body.style.backgroundColor = "hsla(12, 6%, 15%, 0.758)";
+      output.innerText = `*Please enter all fields!`;
+    }
   } else {
     output.style.color = "white";
     body.style.backgroundColor = "hsla(12, 6%, 15%, 0.758)";
-    output.innerText = `*Please enter all fields!`;
+    output.innerText = `*Please enter numbers!!`;
   }
 }
 
@@ -50,10 +78,14 @@ function clickHandler() {
 //   const qtyOfStock = Number(qtyInput.value);
 //   const currPrice = Number(currInput.value);
 
+//   if (initialPrice > 0 && qtyOfStock > 0 && currPrice > 0) {
 //     const result = calcProfitAndLoss(initialPrice, qtyOfStock, currPrice);
 
 //     output.innerText = result;
-
+//   } else {
+//     output.style.color = "white";
+//     body.style.backgroundColor = "hsla(12, 6%, 15%, 0.758)";
+//     output.innerText = `*Please enter all fields!`;
+//   }
 // }
-
 submitButton.addEventListener("click", clickHandler);
