@@ -9,15 +9,17 @@ function calcProfitAndLoss(initialPrice, qtyOfStock, currPrice) {
   if (initialPrice > currPrice) {
     const loss = (initialPrice - currPrice) * qtyOfStock;
     const lossPercent = (loss / initialPrice) * 100;
+    const lossPercentage = lossPercent.toFixed(2);
     body.style.backgroundColor = "#991b1b";
-    let message = `Hey you have made a loss of Rs ${loss} and your loss percentage is ${lossPercent}%.`;
+    let message = `Hey you have made a loss of Rs ${loss} and your loss percentage is ${lossPercentage}%.`;
 
     return message;
   } else if (currPrice > initialPrice) {
     const profit = (currPrice - initialPrice) * qtyOfStock;
     const proftPercent = (profit / initialPrice) * 100;
+    const proftPercentage = proftPercent.toFixed(2);
     body.style.backgroundColor = "#065f46";
-    let message = `Yay! you have made a profit of Rs ${profit} and your profit percentage is ${proftPercent}%.`;
+    let message = `Yay! you have made a profit of Rs ${profit} and your profit percentage is ${proftPercentage}%.`;
 
     return message;
   } else {
