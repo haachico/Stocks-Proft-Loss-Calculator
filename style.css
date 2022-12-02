@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 8rem auto;
+  text-align: center;
 }
 
 .heading {
@@ -27,7 +28,8 @@ body {
 #initial-input,
 #qty-input,
 #curr-input {
-  width: 18%;
+  width: 45%;
+  height: 6rem;
   text-align: center;
   padding: 1rem 1.2rem;
   margin-bottom: 2rem;
